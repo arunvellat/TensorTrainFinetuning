@@ -128,7 +128,7 @@ class LorettaAdpModel(torch.nn.Module):
                     is_target_modules_in_base_model = True
                 parent, target, target_name = self._get_submodules(key)
                 # determine the type of adapter to be used, this will effect the forward pass
-                print(target.in_features, target.out_features, kwargs.bottleneck_size)
+                print(target.in_features, target.out_features, kwargs["bottleneck_size"])
                 if self.peft_config.use_parallel_adapter:
                     adapter_type = "parallel_adapter"
                 else:
